@@ -1,0 +1,30 @@
+model:
+  model_id: Qwen/Qwen3-1.7B
+  revision: main
+  precision: auto
+  quantization: none
+  device: auto
+  native_thinking: false
+  hub_auth: anonymous
+  local_files_only: true
+generation:
+  max_new_tokens: 128
+  do_sample: false
+  temperature: 0.0
+  top_p: 1.0
+  timeout_seconds: 120
+benchmark:
+  seed: 42
+  partition: development
+  gsm8k: 5
+  arc_easy: 5
+  arc_challenge: 5
+  trials: 1
+  batch_size: 1
+  cache_dir: results/selections
+adaptive:
+  low_threshold: 0.35
+  high_threshold: 0.70
+  uncertainty_weight: 0.5
+  cost_lambda: 0.1
+output_dir: results
